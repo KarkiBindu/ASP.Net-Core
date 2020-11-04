@@ -16,7 +16,7 @@
         
     - `AspNetCoreHostingModel` :
         - Specifies how the application should be hosted i.e Inprocess or Outprocess
-        - The default is outofprocess hosting but it has been changed to Inprocess for 3 and above
+        - The default is outofprocess hosting 
         
     - `PackageReference` :
         - Used to include reference to the NUGET package that is installed for the application
@@ -45,6 +45,34 @@
     ![launchSettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/launchSettings.JPG)
     - This file is required while development only
     - It is used when application is run from CLI or IDE
+    - It has two profile : 1) `IIS Express` and 2) Same as project name `EmployeeManagement`
+    - When the application is run from IDE with default build setting or by clicking `ctrl + F5`, `IIS Express` profile is used with `iisSettings` where port number can be changed
+    - In `IIS Express` the `ASPNETCORE_ENVIRONMENT` i.e environment varibale can be change as development, staging or prodction and also new environment variables can be added
+    - New environment variables will be available throghout the application and can be used to write conditionally executable code depending on these variables
+    - `EmployeeManagement` profile is used when the application is run from .NET core CLI (Command Line Interface)
+    - `commandName` property of profile and `AspNetHostingModel` of project file is used to determine the internal and external web server for out of process hosting
+    - The value of the commandName property can be any one of the following. 
+        - Project
+        - IISExpress
+        - IIS
+    - The dependency is as follows:
     
+    ![WebServers](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/WebServes.JPG)
+    
+6. <b>appsettings.json </b> :
+    - File view :
+    
+    ![appsettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/appsettings.JPG)
+    - Settings that are used while publishing the application are stored in this file
+    - In asp.net application configuration settings like database connection strings are stored in web.config file but in .net core configuration settings can come from various sources like:
+        - Files
+        - User secrets
+        - Environment variables
+        - Command-line arguments
+        - Custom configuration source
+        
+        
+      
+
     
  
