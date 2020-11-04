@@ -1,13 +1,11 @@
 # ASP.Net-Core 2.2 Empty Project
 
-1. <b>Solution Explorer View</b> :
-
+1. <b>Solution Explorer View</b> :</br>
     ![Solution Explorer](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/SolutionExplorer.JPG)
     
 2. <b> Project File </b> :
     - To edit project file, right click the solution and click "Edit Project File"
-    - File is as follows :
-    
+    - File is as follows :</br>    
     ![Project File](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/ProjectFile.JPG)
     
     - `TargetFramework` : 
@@ -23,8 +21,7 @@
         - It is containing <i> Metapackages </i> (`Microsoft.AspNetCore.App`), they have no content of their own and contains only dependencies
 
 3. <b> Program.cs </b> :
-    - The code is as follow :
-    
+    - The code is as follow :</br>    
     ![Program.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Program.JPG)
     - ASP.Net core initially starts as console application with `Main` method, which configres and transition to ASP.NET core web application
     - Extended method `CreateWebHostBuilder` calls `WebHost.CreateDefaultBuilder` which sets up webserver, loads host and application from configuration sources and configures logging
@@ -33,15 +30,13 @@
                 .UseStartup<Startup>()`
     
 4. <b> StartUp.cs </b> : 
-    - The code is as follows :
-    
+    - The code is as follows :</br>    
     ![StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/StartUp.JPG)
     - `ConfigureServices` : configures services required for application
     - `Configure` : configures the application request processing pipeline
     
 5. <b> launchSettings.json </b> :
-    - View is as follows :
-    
+    - View is as follows :</br>    
     ![launchSettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/launchSettings.JPG)
     - This file is required while development only
     - It is used when application is run from CLI or IDE
@@ -55,13 +50,11 @@
         - Project
         - IISExpress
         - IIS
-    - The dependency is as follows:
-    
+    - The dependency is as follows:</br>    
     ![WebServers](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/WebServes.JPG)
     
 6. <b>appsettings.json </b> :
-    - File view :
-    
+    - File view :</br>    
     ![appsettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/appsettings.JPG)
     - Settings that are used while publishing the application are stored in this file
     - In asp.net application configuration settings like database connection strings are stored in web.config file but in .net core configuration settings can come from various sources like:
@@ -70,7 +63,11 @@
         - Environment variables
         - Command-line arguments
         - Custom configuration source
-        
+    - Custom configuration settings can be added as key-value pair and to read it IConfiguration service is used
+    - Addition of custom configuration :</br>    
+    ![CustomCOnfigAddition](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/CustomConfig_appSetting.JPG)    
+    - Usage of IConfiguration in StartUp.cs </br>
+    ![IConfigurationUsage](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/IConfigurationUse_StartUp.JPG)
         
       
 
