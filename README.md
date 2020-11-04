@@ -68,6 +68,38 @@
     ![CustomCOnfigAddition](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/CustomConfig_appSetting.JPG)    
     - Usage of IConfiguration in StartUp.cs </br>
     ![IConfigurationUsage](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/IConfigurationUse_StartUp.JPG)
+    - In addition to <b>appsettings.json</b> there are environment specific like for development environment there is <b>appsettings.Development.json</b> and duplicate settings in these files will override those of <b>appsettings.json</b> file
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
       
 
