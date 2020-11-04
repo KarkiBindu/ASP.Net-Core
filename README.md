@@ -35,7 +35,7 @@
 4. <b> StartUp.cs </b> : 
     - The code is as follows :
     
-    ![StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/SatrtUp.JPG)
+    ![StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/StartUp.JPG)
     - `ConfigureServices` : configures services required for application
     - `Configure` : configures the application request processing pipeline
     
