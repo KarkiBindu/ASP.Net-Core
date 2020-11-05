@@ -5,7 +5,7 @@
     
 2. <b> Project File </b> :
     - To edit project file, right click the solution and click "Edit Project File"
-    - File is as follows :</br>    
+    - File is as follows : 
     ![Project File](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/ProjectFile.JPG)
     
     - `TargetFramework` : 
@@ -21,7 +21,7 @@
         - It is containing <i> Metapackages </i> (`Microsoft.AspNetCore.App`), they have no content of their own and contains only dependencies
 
 3. <b> Program.cs </b> :
-    - The code is as follow :</br>    
+    - The code is as follow :   
     ![Program.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Program.JPG)
     - ASP.Net core initially starts as console application with `Main` method, which configres and transition to ASP.NET core web application
     - Extended method `CreateWebHostBuilder` calls `WebHost.CreateDefaultBuilder` which sets up webserver, loads host and application from configuration sources and configures logging
