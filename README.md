@@ -5,7 +5,7 @@
     
 2. <b> Project File </b> :
     - To edit project file, right click the solution and click "Edit Project File"
-    - File is as follows : 
+    - File is as follows :</br> 
     ![Project File](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/ProjectFile.JPG)
     
     - `TargetFramework` : 
@@ -30,13 +30,13 @@
                 .UseStartup<Startup>()`
     
 4. <b> StartUp.cs </b> : 
-    - The code is as follows :</br>    
+    - The code is as follows :   
     ![StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/StartUp.JPG)
     - `ConfigureServices` : configures services required for application
     - `Configure` : configures the application request processing pipeline
     
 5. <b> launchSettings.json </b> :
-    - View is as follows :</br>
+    - View is as follows :
     ![launchSettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/launchSettings.JPG)
     - This file is required while development only
     - It is used when application is run from CLI or IDE
@@ -69,6 +69,23 @@
     - Usage of IConfiguration in StartUp.cs </br>
     ![IConfigurationUsage](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/IConfigurationUse_StartUp.JPG)
     - In addition to <b>appsettings.json</b> there are environment specific like for development environment there is <b>appsettings.Development.json</b> and duplicate settings in these files will override those of <b>appsettings.json</b> file
+    
+7. <b> Middleware </b> :
+    - It is a piece of software that can handle request and response
+    - Each middleware has a specific task for e.g. : To authenticate or to handle errors or to serve static file
+    - These are use to set up request processing pipeline in ASP .net core and the pipeline determines how to process the request as they have access to both incoming request and outgoing response
+    - Middleware components are executed in order they are added in pipeline so they must be added cautiously in pipeline
+    - Example: let's say the order of middleware added is logging, Static file and MVC
+    [!Middleware Example](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Middleware_Example.JPG)
+    - If we want to access data from database then first the request go to logging middleware and it saves time log and sends the reuest to static files middleware but  this middleware has no relation to request so it sends the request to MVC and MVC responds to it and sends response back to static files middleware and it sends back to logging which saves response time and gives output to browser
+    - <b>Short Circuit</b> : If we want to access a image(image, html, css etc request are handled by static files middleware), then staic files responds to the request and does not send the request further which causes short circuit which is good for time management
+    - Any number of middleware can be added to the pipeline
+    
+8. <b> Configuring ASP .NET Core request pipeline </b> :
+    - Request pipeline is configured as a part of the application startup by the configure() method in StartUp.cs
+    [!Middleware_StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Middleware_StartUp.JPG)
+    - First Middleware is `UserDevelopmentExceptionPage()` and second is added by `app.Run()` method
+
     
     
     
