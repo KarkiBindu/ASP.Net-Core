@@ -36,7 +36,7 @@
     - `Configure` : configures the application request processing pipeline
     
 5. <b> launchSettings.json </b> :
-    - View is as follows :</br>    
+    - View is as follows :</br>
     ![launchSettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/launchSettings.JPG)
     - This file is required while development only
     - It is used when application is run from CLI or IDE
@@ -50,11 +50,11 @@
         - Project
         - IISExpress
         - IIS
-    - The dependency is as follows:</br>    
+    - The dependency is as follows:</br>
     ![WebServers](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/WebServes.JPG)
     
 6. <b>appsettings.json </b> :
-    - File view :</br>    
+    - File view :</br>
     ![appsettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/appsettings.JPG)
     - Settings that are used while publishing the application are stored in this file
     - In asp.net application configuration settings like database connection strings are stored in web.config file but in .net core configuration settings can come from various sources like:
