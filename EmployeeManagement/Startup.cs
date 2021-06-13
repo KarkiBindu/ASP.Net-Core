@@ -32,14 +32,21 @@ namespace EmployeeManagement
                 app.UseDeveloperExceptionPage();
             }
 
-            // to make static files default
-            DefaultFilesOptions defFileOpt = new DefaultFilesOptions();
-            defFileOpt.DefaultFileNames.Clear();
-            defFileOpt.DefaultFileNames.Add("foo.html");
-            app.UseDefaultFiles(defFileOpt);
+            //// to make static files default
+            //DefaultFilesOptions defFileOpt = new DefaultFilesOptions();
+            //defFileOpt.DefaultFileNames.Clear();
+            //defFileOpt.DefaultFileNames.Add("foo.html");
+            //app.UseDefaultFiles(defFileOpt);
+            ////To serve static files like images
+            //app.UseStaticFiles();
 
-            //To serve static files like images
-            app.UseStaticFiles();
+            // Use static files and use default files can be replace by using use file server
+
+            FileServerOptions fileServeOpt = new FileServerOptions();
+            fileServeOpt.DefaultFilesOptions.DefaultFileNames.Clear();
+            fileServeOpt.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+            app.UseFileServer(fileServeOpt);
+
 
             app.Run(async (context) =>
             {
