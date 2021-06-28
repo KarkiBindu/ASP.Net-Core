@@ -106,6 +106,10 @@
      - When a request is made from the browser it is sent to the controller, then controller maps the requests using routing rules to whether send the reqest to the model or view
      - Model contains the set of data and logic to manage the data
      - View contains logic to display data, no complex logic should be implemented on this layer, if we must we should use view model or view component
+     - To add MVC to existing empty project 
+       - Add MVC services on `ConfigureServices` function of Startup.cs file
+       - Add Middleware UseMvc on `Configure` fnction of Startup.cs file
+       - use these middleware after the middlewares of static files
     
     
     
