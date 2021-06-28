@@ -42,10 +42,10 @@ namespace EmployeeManagement
 
             // Use static files and use default files can be replace by using use file server
 
-            FileServerOptions fileServeOpt = new FileServerOptions();
-            fileServeOpt.DefaultFilesOptions.DefaultFileNames.Clear();
-            fileServeOpt.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
-            app.UseFileServer(fileServeOpt);
+            //FileServerOptions fileServeOpt = new FileServerOptions();
+            //fileServeOpt.DefaultFilesOptions.DefaultFileNames.Clear();
+            //fileServeOpt.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+            app.UseFileServer("abc.html");
 
 
             app.Run(async (context) =>
