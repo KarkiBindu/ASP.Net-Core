@@ -86,10 +86,26 @@
     ![Middleware_StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Middleware_StartUp.JPG)
     - First Middleware is `UserDevelopmentExceptionPage()` and second is added by `app.Run()` method
 
+9. <b> Development Environments </b> :    
+    - <b>Development</b>: 
+      - used by developers as it provides debggng feature
+      - provides detailed errors using developerexception page
+      - Non-unified js and css are used in this environment
+    - <b>Staging</b> :
+      - It is identical to production
+      - helps to analyse deployment related issues 
+    - <b>Prodction</b> :
+      - Deployed product
+      - no debugging
+      - uses unified js and css 
+    These environment variables can be changed in `launchSettings.json` file's `ASPNETCORE_ENVIRONMENT`
     
-    
-    
-    
+10. <b> MVC in .Net Core </b> : 
+     - It is architectural design pattern
+     - It basically contains UI Layer: View, Business Layer: Controller, Data access Layer: Model
+     - When a request is made from the browser it is sent to the controller, then controller maps the requests using routing rules to whether send the reqest to the model or view
+     - Model contains the set of data and logic to manage the data
+     - View contains logic to display data, no complex logic should be implemented on this layer, if we must we should use view model or view component
     
     
     
