@@ -1,12 +1,12 @@
 # ASP.Net-Core 2.2 Empty Project
 
 1. <b>Solution Explorer View</b> :</br>
-    ![Solution Explorer](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/SolutionExplorer.JPG)
+    ![Solution Explorer](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/SolutionExplorer.JPG)
     
 2. <b> Project File </b> :
     - To edit project file, right click the solution and click "Edit Project File"
     - File is as follows :</br> 
-    ![Project File](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/ProjectFile.JPG)
+    ![Project File](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/ProjectFile.JPG)
     
     - `TargetFramework` : 
         - Specifies the target framework using Target Framework Moniker(TFM)
@@ -22,7 +22,7 @@
 
 3. <b> Program.cs </b> :
     - The code is as follow :   
-    ![Program.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Program.JPG)
+    ![Program.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/Program.JPG)
     - ASP.Net core initially starts as console application with `Main` method, which configres and transition to ASP.NET core web application
     - Extended method `CreateWebHostBuilder` calls `WebHost.CreateDefaultBuilder` which sets up webserver, loads host and application from configuration sources and configures logging
     - `CreateWebHostBuilder(args).Build().Run()` and then the webhost is build to host application and run listening to http request
@@ -31,13 +31,13 @@
     
 4. <b> StartUp.cs </b> : 
     - The code is as follows :   
-    ![StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/StartUp.JPG)
+    ![StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/StartUp.JPG)
     - `ConfigureServices` : configures services required for application
     - `Configure` : configures the application request processing pipeline
     
 5. <b> launchSettings.json </b> :
     - View is as follows :</br>
-    ![launchSettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/launchSettings.JPG)
+    ![launchSettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/launchSettings.JPG)
     - This file is required while development only
     - It is used when application is run from CLI or IDE
     - It has two profile : 1) `IIS Express` and 2) Same as project name `EmployeeManagement`
@@ -51,11 +51,11 @@
         - IISExpress
         - IIS
     - The dependency is as follows:</br>
-    ![WebServers](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/WebServes.JPG)
+    ![WebServers](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/WebServes.JPG)
     
 6. <b>appsettings.json </b> :
     - File view :</br>
-    ![appsettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/appsettings.JPG)
+    ![appsettings.json](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/appsettings.JPG)
     - Settings that are used while publishing the application are stored in this file
     - In asp.net application configuration settings like database connection strings are stored in web.config file but in .net core configuration settings can come from various sources like:
         - Files
@@ -65,9 +65,9 @@
         - Custom configuration source
     - Custom configuration settings can be added as key-value pair and to read it IConfiguration service is used
     - Addition of custom configuration :</br>    
-    ![CustomCOnfigAddition](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/CustomConfig_appSetting.JPG)    
+    ![CustomCOnfigAddition](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/CustomConfig_appSetting.JPG)    
     - Usage of IConfiguration in StartUp.cs </br>
-    ![IConfigurationUsage](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/IConfigurationUse_StartUp.JPG)
+    ![IConfigurationUsage](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/IConfigurationUse_StartUp.JPG)
     - In addition to <b>appsettings.json</b> there are environment specific like for development environment there is <b>appsettings.Development.json</b> and duplicate settings in these files will override those of <b>appsettings.json</b> file
     
 7. <b> Middleware </b> :
@@ -76,14 +76,14 @@
     - These are use to set up request processing pipeline in ASP .net core and the pipeline determines how to process the request as they have access to both incoming request and outgoing response
     - Middleware components are executed in order they are added in pipeline so they must be added cautiously in pipeline
     - Example: let's say the order of middleware added is logging, Static file and MVC
-    ![Middleware Example](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Middleware_Example.JPG)
+    ![Middleware Example](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/Middleware_Example.JPG)
     - If we want to access data from database then first the request go to logging middleware and it saves time log and sends the reuest to static files middleware but  this middleware has no relation to request so it sends the request to MVC and MVC responds to it and sends response back to static files middleware and it sends back to logging which saves response time and gives output to browser
     - <b>Short Circuit</b> : If we want to access a image(image, html, css etc request are handled by static files middleware), then staic files responds to the request and does not send the request further which causes short circuit which is good for time management
     - Any number of middleware can be added to the pipeline
     
 8. <b> Configuring ASP .NET Core request pipeline </b> :
     - Request pipeline is configured as a part of the application startup by the configure() method in StartUp.cs
-    ![Middleware_StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Middleware_StartUp.JPG)
+    ![Middleware_StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Images/Middleware_StartUp.JPG)
     - First Middleware is `UserDevelopmentExceptionPage()` and second is added by `app.Run()` method
 
 9. <b> Development Environments </b> :    
