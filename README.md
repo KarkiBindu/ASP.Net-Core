@@ -86,10 +86,42 @@
     ![Middleware_StartUp.cs](https://github.com/KarkiBindu/ASP.Net-Core/blob/main/Middleware_StartUp.JPG)
     - First Middleware is `UserDevelopmentExceptionPage()` and second is added by `app.Run()` method
 
+9. <b> Development Environments </b> :    
+    - <b>Development</b>: 
+      - used by developers as it provides debggng feature
+      - provides detailed errors using developerexception page
+      - Non-unified js and css are used in this environment
+    - <b>Staging</b> :
+      - It is identical to production
+      - helps to analyse deployment related issues 
+    - <b>Prodction</b> :
+      - Deployed product
+      - no debugging
+      - uses unified js and css 
+    These environment variables can be changed in `launchSettings.json` file's `ASPNETCORE_ENVIRONMENT`
     
-    
-    
-    
+10. <b> MVC in .Net Core </b> : 
+     - It is architectural design pattern
+     - It basically contains UI Layer: View, Business Layer: Controller, Data access Layer: Model
+     - When a request is made from the browser it is sent to the controller, then controller maps the requests using routing rules to whether send the reqest to the model or view
+     - Model contains the set of data and logic to manage the data
+     - View contains logic to display data, no complex logic should be implemented on this layer, if we must we should use view model or view component
+     - To add MVC to existing empty project 
+       - Add MVC services on `ConfigureServices` function of Startup.cs file
+       - Add Middleware UseMvc on `Configure` fnction of Startup.cs file
+       - Use these middleware after the middlewares of static files
+       - There are MVC services like `AddMVC` and `AddMvcCore`; core provides only the services of core whereas mvc provides all MVC services including core services
+
+11. <b> Dependency Injection (DI)</b> :
+     - In ASP .Net dependency injection was optional and external framework were to be sed to implement it
+     - DI is integral part of .Net core, which allows to create loosely coupled, extensible and easily testable systems
+     - When we inject the depending objects with interfaces instead of creating the hardcoded instance of dependent object, it is called dependency injection
+     - One of the way is to use constructor dependency injection; where Interface of the dependent objects are injected into the constructor parameter
+     - But .net core cannot create the instance of the object, for this we must register the interface and imeplementations as services in `ConfigureServices` of startup.cs file
+     - There are three ways to register the services:
+       - AddSingleton: it creates the instance only one time and use the same instance through out the application's lifetime
+       - AddTransient: it creates the instance each time the request is generated
+       - AddScoped: it creates instance one per request within the scope(required/running time of the method or class it is being called)   
     
     
     
