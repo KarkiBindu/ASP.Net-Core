@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,8 @@ namespace EmployeeManagement
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,12 +43,14 @@ namespace EmployeeManagement
             ////To serve static files like images
             //app.UseStaticFiles();
 
-            // Use static files and use default files can be replace by using use file server
-
             //FileServerOptions fileServeOpt = new FileServerOptions();
             //fileServeOpt.DefaultFilesOptions.DefaultFileNames.Clear();
             //fileServeOpt.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
-            app.UseFileServer("abc.html");
+
+            // Use static files and use default files can be replace by using use file server
+            //app.UseFileServer("abc.html");
+
+            app.UseMvcWithDefaultRoute();
 
 
             app.Run(async (context) =>
